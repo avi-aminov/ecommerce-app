@@ -13,6 +13,12 @@
 		74306C23256BE09000CEB143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74306C21256BE09000CEB143 /* Main.storyboard */; };
 		74306C25256BE09100CEB143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74306C24256BE09100CEB143 /* Assets.xcassets */; };
 		74306C28256BE09100CEB143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74306C26256BE09100CEB143 /* LaunchScreen.storyboard */; };
+		74306C37256BE0AB00CEB143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74306C36256BE0AB00CEB143 /* AppDelegate.swift */; };
+		74306C39256BE0AB00CEB143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74306C38256BE0AB00CEB143 /* SceneDelegate.swift */; };
+		74306C3B256BE0AB00CEB143 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74306C3A256BE0AB00CEB143 /* ViewController.swift */; };
+		74306C3E256BE0AB00CEB143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74306C3C256BE0AB00CEB143 /* Main.storyboard */; };
+		74306C43256BE0AC00CEB143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74306C41256BE0AC00CEB143 /* LaunchScreen.storyboard */; };
+		74306C4B256BE0E300CEB143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74306C24256BE09100CEB143 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +30,24 @@
 		74306C24256BE09100CEB143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74306C27256BE09100CEB143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74306C29256BE09100CEB143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74306C34256BE0AB00CEB143 /* ecommerce-admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ecommerce-admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74306C36256BE0AB00CEB143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		74306C38256BE0AB00CEB143 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		74306C3A256BE0AB00CEB143 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		74306C3D256BE0AB00CEB143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		74306C42256BE0AC00CEB143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		74306C44256BE0AC00CEB143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		74306C15256BE09000CEB143 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74306C31256BE0AB00CEB143 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,7 +60,9 @@
 		74306C0F256BE09000CEB143 = {
 			isa = PBXGroup;
 			children = (
+				74306C4A256BE0DB00CEB143 /* Shared */,
 				74306C1A256BE09000CEB143 /* ecommerce-app */,
+				74306C35256BE0AB00CEB143 /* ecommerce-admin */,
 				74306C19256BE09000CEB143 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				74306C18256BE09000CEB143 /* ecommerce-app.app */,
+				74306C34256BE0AB00CEB143 /* ecommerce-admin.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,11 +83,31 @@
 				74306C1D256BE09000CEB143 /* SceneDelegate.swift */,
 				74306C1F256BE09000CEB143 /* ViewController.swift */,
 				74306C21256BE09000CEB143 /* Main.storyboard */,
-				74306C24256BE09100CEB143 /* Assets.xcassets */,
 				74306C26256BE09100CEB143 /* LaunchScreen.storyboard */,
 				74306C29256BE09100CEB143 /* Info.plist */,
 			);
 			path = "ecommerce-app";
+			sourceTree = "<group>";
+		};
+		74306C35256BE0AB00CEB143 /* ecommerce-admin */ = {
+			isa = PBXGroup;
+			children = (
+				74306C36256BE0AB00CEB143 /* AppDelegate.swift */,
+				74306C38256BE0AB00CEB143 /* SceneDelegate.swift */,
+				74306C3A256BE0AB00CEB143 /* ViewController.swift */,
+				74306C3C256BE0AB00CEB143 /* Main.storyboard */,
+				74306C41256BE0AC00CEB143 /* LaunchScreen.storyboard */,
+				74306C44256BE0AC00CEB143 /* Info.plist */,
+			);
+			path = "ecommerce-admin";
+			sourceTree = "<group>";
+		};
+		74306C4A256BE0DB00CEB143 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				74306C24256BE09100CEB143 /* Assets.xcassets */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +130,23 @@
 			productReference = 74306C18256BE09000CEB143 /* ecommerce-app.app */;
 			productType = "com.apple.product-type.application";
 		};
+		74306C33256BE0AB00CEB143 /* ecommerce-admin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74306C45256BE0AC00CEB143 /* Build configuration list for PBXNativeTarget "ecommerce-admin" */;
+			buildPhases = (
+				74306C30256BE0AB00CEB143 /* Sources */,
+				74306C31256BE0AB00CEB143 /* Frameworks */,
+				74306C32256BE0AB00CEB143 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ecommerce-admin";
+			productName = "ecommerce-admin";
+			productReference = 74306C34256BE0AB00CEB143 /* ecommerce-admin.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -97,6 +157,9 @@
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					74306C17256BE09000CEB143 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					74306C33256BE0AB00CEB143 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -115,6 +178,7 @@
 			projectRoot = "";
 			targets = (
 				74306C17256BE09000CEB143 /* ecommerce-app */,
+				74306C33256BE0AB00CEB143 /* ecommerce-admin */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +194,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		74306C32256BE0AB00CEB143 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74306C43256BE0AC00CEB143 /* LaunchScreen.storyboard in Resources */,
+				74306C4B256BE0E300CEB143 /* Assets.xcassets in Resources */,
+				74306C3E256BE0AB00CEB143 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,6 +214,16 @@
 				74306C20256BE09000CEB143 /* ViewController.swift in Sources */,
 				74306C1C256BE09000CEB143 /* AppDelegate.swift in Sources */,
 				74306C1E256BE09000CEB143 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74306C30256BE0AB00CEB143 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74306C3B256BE0AB00CEB143 /* ViewController.swift in Sources */,
+				74306C37256BE0AB00CEB143 /* AppDelegate.swift in Sources */,
+				74306C39256BE0AB00CEB143 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +242,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				74306C27256BE09100CEB143 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		74306C3C256BE0AB00CEB143 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74306C3D256BE0AB00CEB143 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		74306C41256BE0AC00CEB143 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74306C42256BE0AC00CEB143 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -319,6 +419,44 @@
 			};
 			name = Release;
 		};
+		74306C46256BE0AC00CEB143 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 523JTT8XH7;
+				INFOPLIST_FILE = "ecommerce-admin/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aminovavi.ecommerce-admin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		74306C47256BE0AC00CEB143 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 523JTT8XH7;
+				INFOPLIST_FILE = "ecommerce-admin/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aminovavi.ecommerce-admin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -336,6 +474,15 @@
 			buildConfigurations = (
 				74306C2D256BE09100CEB143 /* Debug */,
 				74306C2E256BE09100CEB143 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74306C45256BE0AC00CEB143 /* Build configuration list for PBXNativeTarget "ecommerce-admin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74306C46256BE0AC00CEB143 /* Debug */,
+				74306C47256BE0AC00CEB143 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
