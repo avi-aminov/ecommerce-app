@@ -1,21 +1,107 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ProductCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="88" id="KGk-i7-Jjw" customClass="ProductCell" customModule="ecommerce_admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="403" height="126"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="403" height="126"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OA3-GT-HY7" customClass="RoundedShadowView" customModule="ecommerce_app">
+                        <rect key="frame" x="8" y="8" width="387" height="110"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aerial_2" translatesAutoresizingMaskIntoConstraints="NO" id="wzJ-gm-mpF" customClass="RoundedImageView" customModule="ecommerce_app">
+                                <rect key="frame" x="8" y="8" width="94" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wzJ-gm-mpF" secondAttribute="height" multiplier="1:1" id="gJZ-Ed-RiC"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgV-tc-zNK">
+                                <rect key="frame" x="349" y="8" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="8Nd-Pd-fbK"/>
+                                    <constraint firstAttribute="height" constant="30" id="RZa-Se-ern"/>
+                                </constraints>
+                                <state key="normal" image="empty_star"/>
+                                <connections>
+                                    <action selector="favoriteClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="B9u-2B-3XI"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CnV-Kg-31b">
+                                <rect key="frame" x="122" y="4.5" width="207" height="101"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6z-sj-1fe">
+                                        <rect key="frame" x="56.5" y="0.0" width="94.5" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$99.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBX-Mz-n8g">
+                                        <rect key="frame" x="56" y="30.5" width="95.5" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="28"/>
+                                        <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmX-bZ-LUH" customClass="RoundedButton" customModule="ecommerce_app">
+                                        <rect key="frame" x="55" y="75" width="97" height="26"/>
+                                        <color key="backgroundColor" red="0.83529411760000005" green="0.3921568627" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="4" maxX="10" maxY="4"/>
+                                        <state key="normal" title="Add to cart">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addToCartClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wBL-WL-fXw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CnV-Kg-31b" firstAttribute="leading" secondItem="wzJ-gm-mpF" secondAttribute="trailing" constant="20" id="2zH-R2-1EK"/>
+                            <constraint firstItem="wzJ-gm-mpF" firstAttribute="leading" secondItem="OA3-GT-HY7" secondAttribute="leading" constant="8" id="FRM-yK-5en"/>
+                            <constraint firstItem="CnV-Kg-31b" firstAttribute="centerY" secondItem="OA3-GT-HY7" secondAttribute="centerY" id="N8W-pa-xhN"/>
+                            <constraint firstAttribute="trailing" secondItem="IgV-tc-zNK" secondAttribute="trailing" constant="8" id="VgV-SH-pVr"/>
+                            <constraint firstItem="wzJ-gm-mpF" firstAttribute="top" secondItem="OA3-GT-HY7" secondAttribute="top" constant="8" id="Vvj-PQ-DfO"/>
+                            <constraint firstItem="IgV-tc-zNK" firstAttribute="leading" secondItem="CnV-Kg-31b" secondAttribute="trailing" constant="20" id="Y7I-UZ-7dw"/>
+                            <constraint firstItem="IgV-tc-zNK" firstAttribute="top" secondItem="OA3-GT-HY7" secondAttribute="top" constant="8" id="feZ-KL-add"/>
+                            <constraint firstAttribute="bottom" secondItem="wzJ-gm-mpF" secondAttribute="bottom" constant="8" id="k0m-OP-qCl"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="OA3-GT-HY7" secondAttribute="trailing" constant="8" id="6vZ-wl-hYe"/>
+                    <constraint firstAttribute="bottom" secondItem="OA3-GT-HY7" secondAttribute="bottom" constant="8" id="F8E-t4-fNN"/>
+                    <constraint firstItem="OA3-GT-HY7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="f2Y-o3-Pcb"/>
+                    <constraint firstItem="OA3-GT-HY7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="mCm-El-DRq"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="productImg" destination="wzJ-gm-mpF" id="fR3-Qh-2vv"/>
+                <outlet property="productPrice" destination="BBX-Mz-n8g" id="QOZ-ea-gLy"/>
+                <outlet property="productTitle" destination="j6z-sj-1fe" id="JuF-dj-awa"/>
+            </connections>
+            <point key="canvasLocation" x="174.63768115942031" y="79.6875"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="aerial_2" width="1000" height="1778"/>
+        <image name="empty_star" width="47" height="47"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

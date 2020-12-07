@@ -74,41 +74,54 @@ class RegisterVC: UIViewController {
     @IBAction func registrationClicked(_ sender: UIButton) {
 
         guard let username = usernameTxt.text, username.isNotEmpty else {
-            showToast(message: "Username must be entered")
+            //showToast(message: "Username must be entered")
+            self.simpleAlert(title: "Error", msg: "Plese fill out all fields")
             return
         }
         
         guard let email = emailTxt.text, email.isNotEmpty  else {
-            showToast(message: "Email must be entered")
+            //showToast(message: "Email must be entered")
+            self.simpleAlert(title: "Error", msg: "Plese fill out all fields")
             return
         }
         
-        guard let password = passwordTxt.text, password.isNotEmpty,
-              let confirmPass = confirmPassTxt.text, confirmPass == password else {
-            showToast(message: "Password Toast Message")
+        guard let password = passwordTxt.text, password.validPass(pass: password)  else {
+            //showToast(message: "Email must be entered")
+            self.simpleAlert(title: "Error", msg: "Password neeed be minimum 6 character")
             return
         }
-        
+
+        guard let confirmPass = confirmPassTxt.text, confirmPass == password else {
+            //showToast(message: "Password Toast Message")
+            self.simpleAlert(title: "Error", msg: "Password do not match")
+            return
+        }
+    
         
         activityIndicator.startAnimating()
         
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            
+        guard let authUser =  Auth.auth().currentUser else {
+            return
+        }
+       
+        let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+    
+        
+        authUser.link(with: credential) { (result, error) in
             if let error = error {
-                debugPrint(error)
+                debugPrint(error._code)
+                Auth.auth().handleFireAuthError(error: error, vc: self)
+                /*
+                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                  // ...
+                }
+                */
+                
                 return
             }
-            
-            
+  
             self.activityIndicator.stopAnimating()
             print("registration")
-            
-            /*
-            guard let user = authResult?.user else {
-                return
-            }
-            */
-            
         }
         
     }

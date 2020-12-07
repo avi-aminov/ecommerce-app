@@ -7,12 +7,27 @@
 
 import Foundation
 import UIKit
+import Firebase
+
+extension Firestore {
+    var categories: Query {
+        return collection("categories").order(by: "timeStemp", descending: true)
+    }
+    
+    func products(category: String) -> Query {
+        return collection("products").whereField("category", isEqualTo: category).order(by: "timeStemp", descending: true)
+    }
+}
 
 
-// Simply for readable code
+// String helper
 extension String {
     var isNotEmpty: Bool {
         return !isEmpty
+    }
+    
+    func validPass(pass: String) ->Bool {
+        return !isEmpty && pass.count > 5
     }
 }
 
@@ -37,3 +52,14 @@ extension UIViewController {
         })
     }
 }
+
+
+//error message popup
+extension UIViewController {
+    func simpleAlert(title: String, msg: String) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+}
+

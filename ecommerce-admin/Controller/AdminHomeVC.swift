@@ -19,6 +19,7 @@ class AdminHomeVC: HomeVC {
     }
     
     @objc func addCategory(){
+        performSegue(withIdentifier: Sqgues.ToAddEditCategory, sender: self)
         
     }
 
