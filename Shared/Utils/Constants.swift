@@ -24,6 +24,10 @@ struct StoryBoardId {
 struct AppImgaes {
     static let GreenCheck = "green_check"
     static let RedCheck = "red_check"
+    static let filledStar = "filled_star"
+    static let emptyStar = "empty_star"
+    static let placeholder = "placeholder"
+    
 }
 
 // colors constans
@@ -43,6 +47,8 @@ struct Identifires {
 struct Sqgues {
     static let ToProducts = "toProductsVC"
     static let ToAddEditCategory = "toAddEditCategory"
-    
-    
+    static let ToEditCategory = "toEditCategory"
+    static let ToAddEditProduct = "toAddEditProduct"
+    static let ToFavorites = "toFavorites"
+
 }

@@ -100,6 +100,24 @@ class RegisterVC: UIViewController {
         
         activityIndicator.startAnimating()
         
+        /*
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                debugPrint(error._code)
+                Auth.auth().handleFireAuthError(error: error, vc: self)
+                return
+            }
+            
+            guard let firUser = result?.user else { return }
+            let artUser = User.init(id: firUser.uid, email: email, username: username, stripeId: "")
+            // Upload to firestore
+
+            self.createFirestoreUser(user: artUser)
+        }
+         */
+        
+        
+        
         guard let authUser =  Auth.auth().currentUser else {
             return
         }
@@ -111,18 +129,35 @@ class RegisterVC: UIViewController {
             if let error = error {
                 debugPrint(error._code)
                 Auth.auth().handleFireAuthError(error: error, vc: self)
-                /*
-                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                  // ...
-                }
-                */
-                
                 return
             }
   
-            self.activityIndicator.stopAnimating()
-            print("registration")
+            guard let firUser = result?.user else { return }
+            let artUser = User.init(id: firUser.uid, email: email, username: username, stripeId: "")
+            
+            // Upload to firestore
+            self.createFirestoreUser(user: artUser)
         }
         
+        
+    }
+    
+    func createFirestoreUser(user: User){
+        // create document reference
+        let newUserRef = Firestore.firestore().collection("users").document(user.id)
+        
+        // create model data
+        let data = User.modelToData(uset: user)
+        
+        // upload to Firestore
+        newUserRef.setData(data) { (error) in
+            if let error = error {
+                Auth.auth().handleFireAuthError(error: error, vc: self)
+                debugPrint(error.localizedDescription)
+            }else{
+                self.dismiss(animated: true, completion: nil)
+            }
+            self.activityIndicator.stopAnimating()
+        }
     }
 }

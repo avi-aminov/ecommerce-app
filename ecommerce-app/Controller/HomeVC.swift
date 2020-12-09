@@ -68,6 +68,9 @@ class HomeVC: UIViewController {
         // change login title to logout if user logged
         if let user = Auth.auth().currentUser, !user.isAnonymous {
             loginOutBtn.title = "Logout"
+            if UserService.userListener == nil {
+                UserService.getCurrentUser()
+            }
         }else{
             loginOutBtn.title = "Login"
         }
@@ -109,6 +112,11 @@ class HomeVC: UIViewController {
         present(controller, animated: true, completion: nil)
     }
     
+    @IBAction func favoritesClicked(_ sender: Any) {
+        performSegue(withIdentifier: Sqgues.ToFavorites, sender: self)
+    }
+    
+    
     @IBAction func loginOutClicked(_ sender: Any) {
         guard let user = Auth.auth().currentUser else {
             return
@@ -119,6 +127,7 @@ class HomeVC: UIViewController {
         }else {
             do {
                 try Auth.auth().signOut()
+                UserService.logoutUser()
                 Auth.auth().signInAnonymously { (result, error)  in
                     if let error = error {
                         debugPrint(error)
@@ -198,6 +207,11 @@ extension HomeVC : UICollectionViewDelegate,
         if segue.identifier == Sqgues.ToProducts {
             if let destination = segue.destination as? ProductsVC {
                 destination.category = selectedCategory
+            }
+        }else if segue.identifier == Sqgues.ToFavorites {
+            if let destination = segue.destination as? ProductsVC {
+                destination.category = selectedCategory
+                destination.showFavorites = true
             }
         }
     }

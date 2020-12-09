@@ -8,8 +8,8 @@
 import UIKit
 import Firebase
 
-class ProductsVC: UIViewController {
-
+class ProductsVC: UIViewController , ProductCellDelegate{
+    
     @IBOutlet weak var tableView: UITableView!
     
     var products = [Product]()
@@ -17,7 +17,7 @@ class ProductsVC: UIViewController {
     
     let db = Firestore.firestore()
     var listner: ListenerRegistration!
-    
+    var showFavorites = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,15 @@ class ProductsVC: UIViewController {
     
     func setupQuery(){
        
-        listner = db.products(category: category.id).addSnapshotListener { (snapshot, error) in
+        var ref: Query!
+        
+        if showFavorites {
+            ref = db.collection("users").document(UserService.user.id).collection("favorites")
+        }else{
+            ref = db.products(category: category.id)
+        }
+        
+        listner = ref.addSnapshotListener { (snapshot, error) in
             if let error = error {
                 debugPrint(error.localizedDescription)
                 return
@@ -65,6 +73,15 @@ class ProductsVC: UIViewController {
                 }
             })
         }
+    
+    }
+    
+    func productFavorited(product: Product) {
+        UserService.favoriteSelected(product: product)
+        guard let index = products.firstIndex(of: product) else {
+            return
+        }
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
 }
 
@@ -78,7 +95,7 @@ extension ProductsVC : UITableViewDelegate, UITableViewDataSource{
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: Identifires.ProductCell, for: indexPath) as? ProductCell {
             
-            cell.configureCell(product: products[indexPath.row])
+            cell.configureCell(product: products[indexPath.row], delegate: self)
             return cell
         }
         return UITableViewCell()

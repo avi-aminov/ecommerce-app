@@ -1,5 +1,5 @@
 //
-//  AddEditCaregoryVC.swift
+//  AddEditProductVC.swift
 //  ecommerce-admin
 //
 //  Created by Avi Aminov on 07/12/2020.
@@ -9,33 +9,42 @@ import UIKit
 import FirebaseStorage
 import FirebaseFirestore
 
-class AddEditCaregoryVC: UIViewController {
+class AddEditProductVC: UIViewController {
 
-    @IBOutlet weak var nameTxt: UITextField!
-    @IBOutlet weak var categoryImg: RoundedImageView!
+    // Outlet
+    @IBOutlet weak var productNameTxt: UITextField!
+    @IBOutlet weak var productPriceTxt: UITextField!
+    @IBOutlet weak var productDescriptionTxt: UITextView!
+    @IBOutlet weak var productImgView: RoundedImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var addBtn: UIButton!
-        
-        
-        
-    var categoryToEdit : Category?
+    @IBOutlet weak var addBtn: RoundedButton!
+    
+    
+    // vars
+    var selectedCategory : Category!
+    var productToEdit : Product!
+    
+    var name = ""
+    var price = 0.0
+    var productDescription = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(imgTapped(_:)))
         tap.numberOfTapsRequired = 1
-        categoryImg.isUserInteractionEnabled = true
-        categoryImg.addGestureRecognizer(tap)
+        productImgView.isUserInteractionEnabled = true
+        productImgView.addGestureRecognizer(tap)
         
-        // if we are editing, categoryToEdit will != nil
-        if let category = categoryToEdit {
-            nameTxt.text = category.name
+        if let product = productToEdit {
+            productNameTxt.text = product.name
+            productDescriptionTxt.text = product.productDescription
+            productPriceTxt.text = String(product.productPrice)
             addBtn.setTitle("Save Changes", for: .normal)
             
-            if let url = URL(string: category.imgUrl){
-                categoryImg.contentMode = .scaleAspectFill
-                categoryImg.kf.setImage(with: url)
+            if let url = URL(string: product.imageUrl){
+                productImgView.contentMode = .scaleAspectFill
+                productImgView.kf.setImage(with: url)
             }
         }
     }
@@ -44,19 +53,26 @@ class AddEditCaregoryVC: UIViewController {
         lanchImgPicker()
     }
     
-    @IBAction func addCategoryClicked(_ sender: Any) {
+    @IBAction func addClicked(_ sender: Any) {
         activityIndicator.startAnimating()
         uploadImageThenDocument()
-    
     }
     
     func uploadImageThenDocument(){
-        guard let image = categoryImg.image,
-              let categoryName = nameTxt.text, categoryName.isNotEmpty else {
-            simpleAlert(title: "Error", msg: "Must add category image and name")
+        guard let image = productImgView.image,
+              let name = productNameTxt.text, name.isNotEmpty,
+              let description = productDescriptionTxt.text, description.isNotEmpty,
+              let priceString = productPriceTxt.text,
+              let price = Double(priceString)  else {
+            simpleAlert(title: "Error", msg: "Please fill out all reqired fields.")
             self.activityIndicator.stopAnimating()
             return
         }
+        
+        self.name = name
+        self.price = price
+        self.productDescription = description
+        
         
         // Turn the image into Data
         guard let imageData = image.jpegData(compressionQuality: 0.2) else {
@@ -64,7 +80,7 @@ class AddEditCaregoryVC: UIViewController {
         }
         
         // Create an storage image reference
-        let imageRef = Storage.storage().reference().child("/category_images/\(categoryName).jpg")
+        let imageRef = Storage.storage().reference().child("/product_images/\(name).jpg")
         
         //set the meta date
         let metaDate = StorageMetadata()
@@ -96,24 +112,29 @@ class AddEditCaregoryVC: UIViewController {
     
     func uploadDocument(url: String) {
         var docRef: DocumentReference!
-        var category = Category.init(
-            name: nameTxt.text!,
+        
+        var product = Product.init(
+            name: name,
+            productPrice: price,
             id: "",
-            imgUrl: url,
-            timeStemp: Timestamp()
+            category: selectedCategory.id,
+            productDescription: productDescription,
+            imageUrl: url,
+            timeStemp: Timestamp(),
+            stock: 1
         )
         
-        if let categoryToEdit = categoryToEdit {
+        if let productToEdit = productToEdit {
             // edit category
-            docRef = Firestore.firestore().collection("categories").document(categoryToEdit.id)
-            category.id = categoryToEdit.id
+            docRef = Firestore.firestore().collection("products").document(productToEdit.id)
+            product.id = productToEdit.id
         }else {
             // new cotegory
-            docRef = Firestore.firestore().collection("categories").document()
-            category.id = docRef.documentID
+            docRef = Firestore.firestore().collection("products").document()
+            product.id = docRef.documentID
         }
         
-        let data = Category.modelToData(category: category)
+        let data = Product.modelToData(product: product)
         docRef.setData(data, merge: true) { (error) in
             if let error = error {
                 self.handelError(error: error, msg: "Unable to upload new category to Firestore")
@@ -124,6 +145,7 @@ class AddEditCaregoryVC: UIViewController {
         }
     }
     
+    
     // print debug and
     // show error message to user if any stem filed
     func handelError(error: Error, msg: String){
@@ -131,12 +153,9 @@ class AddEditCaregoryVC: UIViewController {
         self.simpleAlert(title: "Error", msg: msg)
         self.activityIndicator.stopAnimating()
     }
-    
 }
 
-
-extension AddEditCaregoryVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+extension AddEditProductVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func lanchImgPicker(){
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -149,8 +168,8 @@ extension AddEditCaregoryVC : UIImagePickerControllerDelegate, UINavigationContr
             return
         }
         
-        categoryImg.contentMode = .scaleAspectFill
-        categoryImg.image = image
+        productImgView.contentMode = .scaleAspectFill
+        productImgView.image = image
         
         dismiss(animated: true, completion: nil)
     }
@@ -158,5 +177,4 @@ extension AddEditCaregoryVC : UIImagePickerControllerDelegate, UINavigationContr
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    
 }
