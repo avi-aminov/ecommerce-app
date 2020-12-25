@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import IQKeyboardManagerSwift
+import Braintree
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        BTAppSwitch.setReturnURLScheme("com.aminovavi.ecommerce-app.payments")
         
         IQKeyboardManager.shared.enable = true
         FirebaseApp.configure()
@@ -37,5 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if url.scheme?.localizedCaseInsensitiveCompare("com.aminovavi.ecommerce-app.payments") == .orderedSame {
+            return BTAppSwitch.handleOpen(url, options: options)
+        }
+        return false
+    }
+    
 }
 

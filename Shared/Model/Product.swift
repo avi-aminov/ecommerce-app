@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 
+
 struct Product {
     var name: String
     var productPrice: Double

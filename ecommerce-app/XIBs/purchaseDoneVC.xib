@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="purchaseDoneVC" customModule="ecommerce_app" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ik1-LN-CCe" customClass="RoundedShadowView" customModule="ecommerce_app" customModuleProvider="target">
+                    <rect key="frame" x="20" y="348" width="374" height="200"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="congratulations !!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1b-eZ-dV0">
+                            <rect key="frame" x="20" y="25" width="334" height="30"/>
+                            <color key="tintColor" red="0.83529411760000005" green="0.3921568627" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="9oK-P3-mZ2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                            <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="highlightedColor" systemColor="systemOrangeColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase completed successfully" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yk1-Pe-11y">
+                            <rect key="frame" x="20" y="75" width="334" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="TO8-hg-FN9"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                            <color key="textColor" red="0.83529411760000005" green="0.3921568627" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DF8-23-jhj" customClass="RoundedButton" customModule="ecommerce_app" customModuleProvider="target">
+                            <rect key="frame" x="20" y="135" width="334" height="45"/>
+                            <color key="backgroundColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="3r8-Be-k4M"/>
+                                <constraint firstAttribute="height" constant="45" id="Rnj-mr-JH7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                            <state key="normal" title="OK">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="okBtnClicked:" destination="-1" eventType="touchUpInside" id="Nmh-u3-0Ni"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="1t9-N9-OLn"/>
+                        <constraint firstItem="O1b-eZ-dV0" firstAttribute="leading" secondItem="Ik1-LN-CCe" secondAttribute="leading" constant="20" id="EYQ-tu-0gr"/>
+                        <constraint firstItem="yk1-Pe-11y" firstAttribute="top" secondItem="O1b-eZ-dV0" secondAttribute="bottom" constant="20" id="EwI-QG-FIg"/>
+                        <constraint firstAttribute="trailing" secondItem="DF8-23-jhj" secondAttribute="trailing" constant="20" id="Mge-cz-jGN"/>
+                        <constraint firstAttribute="bottom" secondItem="DF8-23-jhj" secondAttribute="bottom" constant="20" id="Xxs-We-QsF"/>
+                        <constraint firstAttribute="trailing" secondItem="yk1-Pe-11y" secondAttribute="trailing" constant="20" id="a9c-rb-oUn"/>
+                        <constraint firstAttribute="trailing" secondItem="O1b-eZ-dV0" secondAttribute="trailing" constant="20" id="fvP-AD-bfd"/>
+                        <constraint firstItem="yk1-Pe-11y" firstAttribute="leading" secondItem="Ik1-LN-CCe" secondAttribute="leading" constant="20" id="gcl-FR-xFo"/>
+                        <constraint firstItem="DF8-23-jhj" firstAttribute="leading" secondItem="Ik1-LN-CCe" secondAttribute="leading" constant="20" id="i3n-d3-Jc1"/>
+                        <constraint firstItem="O1b-eZ-dV0" firstAttribute="top" secondItem="Ik1-LN-CCe" secondAttribute="top" constant="25" id="jC5-Wo-6vs"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.6523972602739726" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ik1-LN-CCe" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="NAF-XC-eyc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ik1-LN-CCe" secondAttribute="trailing" constant="20" id="WAD-gM-YkT"/>
+                <constraint firstItem="Ik1-LN-CCe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ji1-s6-v05"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="90.401785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

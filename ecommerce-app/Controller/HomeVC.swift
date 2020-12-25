@@ -18,20 +18,35 @@ class HomeVC: UIViewController {
     var selectedCategory : Category!
     let db = Firestore.firestore()
     var listner: ListenerRegistration!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        setupInitialAnonymousUser()
+        //setupInitialAnonymousUser()
         //setupNavigationBar()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        listner.remove()
+        categories.removeAll()
+        collectionView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setCatogoryListener()
+        setLoginBtnText()
+    }
+    
+    // config collection view
+    // set delegate on self
+    // register caegory cell .xib
     func setupCollectionView(){
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: Identifires.CategoryCell, bundle: nil), forCellWithReuseIdentifier: Identifires.CategoryCell)
     }
     
+    /*
     func setupInitialAnonymousUser(){
         if Auth.auth().currentUser == nil {
             Auth.auth().signInAnonymously { (result, error) in
@@ -40,8 +55,11 @@ class HomeVC: UIViewController {
                     debugPrint(error)
                 }
             }
+        }else {
+            UserService.getCurrentUser()
         }
     }
+    */
     
     func setupNavigationBar(){
         guard let font = UIFont(name: "futura", size: 26) else {
@@ -53,18 +71,7 @@ class HomeVC: UIViewController {
         ]
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        listner.remove()
-        categories.removeAll()
-        collectionView.reloadData()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        setCatogoryListener()
-        //fetchDocument()
-        //fetchCollection()
-        
+    func  setLoginBtnText(){
         // change login title to logout if user logged
         if let user = Auth.auth().currentUser, !user.isAnonymous {
             loginOutBtn.title = "Logout"
@@ -77,7 +84,6 @@ class HomeVC: UIViewController {
     }
     
     func setCatogoryListener(){
-        
         //.whereField("isActive", isEqualTo: true)
         
         listner = db.categories.addSnapshotListener { (snapshot, error) in
@@ -105,25 +111,47 @@ class HomeVC: UIViewController {
         }
     }
     
-    fileprivate func presendLoginController() {
+    // go to login page
+    fileprivate func presendLoginController(isFoolScreen: Bool) {
         let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: StoryBoardId.LoginVC)
-        controller.modalPresentationStyle = .fullScreen
+        if isFoolScreen {
+            controller.modalPresentationStyle = .fullScreen
+        }
         present(controller, animated: true, completion: nil)
     }
     
+    // if user login show favorite prouct
+    // else go to login page
     @IBAction func favoritesClicked(_ sender: Any) {
-        performSegue(withIdentifier: Sqgues.ToFavorites, sender: self)
-    }
-    
-    
-    @IBAction func loginOutClicked(_ sender: Any) {
-        guard let user = Auth.auth().currentUser else {
-            return
+        
+        if let user = Auth.auth().currentUser, !user.isAnonymous {
+            performSegue(withIdentifier: Sqgues.ToFavorites, sender: self)
+        }else{
+            presendLoginController(isFoolScreen: false)
         }
         
+    }
+    
+    // login or logOut btn clicked
+    @IBAction func loginOutClicked(_ sender: Any) {
+        
+        if Auth.auth().currentUser != nil {
+            do {
+                try Auth.auth().signOut()
+                UserService.logoutUser()
+                self.presendLoginController(isFoolScreen: true)
+            } catch {
+                debugPrint(error)
+                Auth.auth().handleFireAuthError(error: error, vc: self)
+            }
+        }else {
+            self.presendLoginController(isFoolScreen: true)
+        }
+        
+        /*
         if user.isAnonymous {
-            presendLoginController()
+            presendLoginController(isFoolScreen: true)
         }else {
             do {
                 try Auth.auth().signOut()
@@ -133,13 +161,14 @@ class HomeVC: UIViewController {
                         debugPrint(error)
                         Auth.auth().handleFireAuthError(error: error, vc: self)
                     }
-                    self.presendLoginController()
+                    self.presendLoginController(isFoolScreen: true)
                 }
             } catch {
                 debugPrint(error)
                 Auth.auth().handleFireAuthError(error: error, vc: self)
             }
         }
+        */
     }
 }
 
@@ -192,8 +221,8 @@ extension HomeVC : UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = view.frame.width
-        let cellWidth = ( width - 60 ) / 2
-        let cellHieght = cellWidth * 1.5
+        let cellWidth = ( width - 70 ) / 2
+        let cellHieght = cellWidth * 2
         
         return CGSize(width: cellWidth, height: cellHieght)
     }

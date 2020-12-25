@@ -45,6 +45,8 @@ class ProductDetailVC: UIViewController {
     
     @IBAction func addCartClicked(_ sender: Any) {
         // add prduct to cart
+        Cart.addItemToCart(item: product)
+        print(Cart.cartItem)
         dismiss(animated: true, completion: nil)
     }
     

@@ -19,6 +19,19 @@ extension Firestore {
     }
 }
 
+extension Int {
+    func penniesToFormattedCurrency() -> String {
+        let dollars = Double(self) / 100
+        let formetter = NumberFormatter()
+        formetter.numberStyle = .currency
+        formetter.currencySymbol = "$"
+        if let dollarString = formetter.string(from: dollars as NSNumber){
+            return dollarString
+        }
+        return "$0.00"
+    }
+}
+
 
 // String helper
 extension String {

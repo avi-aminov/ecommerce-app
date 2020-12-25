@@ -25,7 +25,7 @@ class RegisterVC: UIViewController {
 
         
         /**
-        fixed bud on ios 12 +
+        fixed bug on ios 12 +
          */
         if #available(iOS 12.0, *) {
             usernameTxt.textContentType = .oneTimeCode
@@ -97,10 +97,8 @@ class RegisterVC: UIViewController {
             return
         }
     
-        
         activityIndicator.startAnimating()
         
-        /*
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 debugPrint(error._code)
@@ -114,14 +112,13 @@ class RegisterVC: UIViewController {
 
             self.createFirestoreUser(user: artUser)
         }
-         */
-        
         
         
         guard let authUser =  Auth.auth().currentUser else {
             return
         }
        
+        /*
         let credential = EmailAuthProvider.credential(withEmail: email, password: password)
     
         
@@ -138,6 +135,7 @@ class RegisterVC: UIViewController {
             // Upload to firestore
             self.createFirestoreUser(user: artUser)
         }
+         */
         
         
     }

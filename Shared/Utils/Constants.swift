@@ -12,12 +12,13 @@ import UIKit
 // Storyboard constans
 struct Storyboard {
     static let LoginStoryboard = "LoginStoryboard"
-    static let Main = "Main"
+    static let MainStoryboard = "Main"
 }
 
 // Storyboard ids constans
 struct StoryBoardId {
     static let LoginVC = "loginVC"
+    static let HomeVC = "homeVC"
 }
 
 // name of images from assets constans
@@ -41,6 +42,7 @@ struct AppColors {
 struct Identifires {
     static let CategoryCell = "CategoryCell"
     static let ProductCell = "ProductCell"
+    static let CartItemCell = "CartItemCell"
 }
 
 
@@ -50,5 +52,5 @@ struct Sqgues {
     static let ToEditCategory = "toEditCategory"
     static let ToAddEditProduct = "toAddEditProduct"
     static let ToFavorites = "toFavorites"
-
+    static let ToCheckout =  "toCheckout"
 }

@@ -32,6 +32,17 @@ final class _UserService {
         }
     }
     
+    func getUsetID() -> User {
+        return user;
+    }
+    
+    func isLoggdin() -> Bool{
+        guard auth.currentUser != nil else {
+            return true
+        }
+        return false
+    }
+    
     func getCurrentUser() {
         guard let authUser = auth.currentUser else {
             return
@@ -66,7 +77,7 @@ final class _UserService {
     
     func favoriteSelected(product: Product){
         let favsRef = Firestore.firestore().collection("users").document(user.id).collection("favorites")
-        
+    
         if favorites.contains(product){
             favorites.removeAll{ $0 == product }
             favsRef.document(product.id).delete()

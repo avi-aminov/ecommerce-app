@@ -26,16 +26,27 @@ class ProductsVC: UIViewController , ProductCellDelegate{
         tableView.dataSource = self
         tableView.register(UINib(nibName: Identifires.ProductCell, bundle: nil), forCellReuseIdentifier: Identifires.ProductCell)
 
-        
-        setupTableView()
+        //setupTableView()
         setupQuery()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        listner.remove()
-        products.removeAll()
-        tableView.reloadData()
+        if listner != nil {
+            listner.remove()
+            products.removeAll()
+            tableView.reloadData()
+        }
     }
+    
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Sqgues.ToCheckout {
+            if let destination = segue.destination as? CheckoutVC {
+                destination.category = category
+            }
+        }
+    }
+    */
     
     func setupTableView(){
         tableView.backgroundColor = UIColor.clear
@@ -44,7 +55,7 @@ class ProductsVC: UIViewController , ProductCellDelegate{
     func setupQuery(){
        
         var ref: Query!
-        
+ 
         if showFavorites {
             ref = db.collection("users").document(UserService.user.id).collection("favorites")
         }else{
@@ -56,7 +67,7 @@ class ProductsVC: UIViewController , ProductCellDelegate{
                 debugPrint(error.localizedDescription)
                 return
             }
-            
+    
             snapshot?.documentChanges.forEach({ (change) in
                 let data = change.document.data()
                 let product = Product.init(data: data)
@@ -73,15 +84,30 @@ class ProductsVC: UIViewController , ProductCellDelegate{
                 }
             })
         }
-    
     }
     
     func productFavorited(product: Product) {
-        UserService.favoriteSelected(product: product)
-        guard let index = products.firstIndex(of: product) else {
-            return
+        if let user = Auth.auth().currentUser, !user.isAnonymous {
+            UserService.favoriteSelected(product: product)
+            guard let index = products.firstIndex(of: product) else {
+                return
+            }
+            tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+        }else{
+            presendLoginController()
         }
-        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    }
+    
+    func productAddToCart(product: Product) {
+        Cart.addItemToCart(item: product)
+    }
+    
+    // go to login page
+    fileprivate func presendLoginController() {
+        let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: StoryBoardId.LoginVC)
+        //controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true, completion: nil)
     }
 }
 
@@ -102,7 +128,7 @@ extension ProductsVC : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 135
+        return 140
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

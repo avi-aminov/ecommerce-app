@@ -10,13 +10,11 @@ import FirebaseStorage
 import FirebaseFirestore
 
 class AddEditCaregoryVC: UIViewController {
-
+    
     @IBOutlet weak var nameTxt: UITextField!
     @IBOutlet weak var categoryImg: RoundedImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var addBtn: UIButton!
-        
-        
         
     var categoryToEdit : Category?
     

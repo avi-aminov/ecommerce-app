@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,23 +18,24 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="aerial_2" translatesAutoresizingMaskIntoConstraints="NO" id="BrL-Ux-6GG">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="161.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="aerial_2" translatesAutoresizingMaskIntoConstraints="NO" id="BrL-Ux-6GG">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="177.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8va-0A-sUm">
-                        <rect key="frame" x="8" y="169.5" width="134" height="22.5"/>
+                        <rect key="frame" x="0.0" y="177.5" width="150" height="22.5"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                        <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="8va-0A-sUm" secondAttribute="trailing" constant="8" id="6NB-HC-QLn"/>
-                <constraint firstAttribute="bottom" secondItem="8va-0A-sUm" secondAttribute="bottom" constant="8" id="Cia-3o-Hwn"/>
-                <constraint firstItem="8va-0A-sUm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Dha-lJ-Oos"/>
-                <constraint firstItem="8va-0A-sUm" firstAttribute="top" secondItem="BrL-Ux-6GG" secondAttribute="bottom" constant="8" id="R7e-8u-hRh"/>
+                <constraint firstAttribute="trailing" secondItem="8va-0A-sUm" secondAttribute="trailing" id="6NB-HC-QLn"/>
+                <constraint firstAttribute="bottom" secondItem="8va-0A-sUm" secondAttribute="bottom" id="Cia-3o-Hwn"/>
+                <constraint firstItem="8va-0A-sUm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Dha-lJ-Oos"/>
+                <constraint firstItem="8va-0A-sUm" firstAttribute="top" secondItem="BrL-Ux-6GG" secondAttribute="bottom" id="R7e-8u-hRh"/>
                 <constraint firstItem="BrL-Ux-6GG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZX1-PG-MaD"/>
                 <constraint firstItem="BrL-Ux-6GG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="coL-2d-q3C"/>
                 <constraint firstAttribute="trailing" secondItem="BrL-Ux-6GG" secondAttribute="trailing" id="pIV-ng-eyK"/>
@@ -47,5 +49,8 @@
     </objects>
     <resources>
         <image name="aerial_2" width="1000" height="1778"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

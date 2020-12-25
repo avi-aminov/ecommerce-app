@@ -39,12 +39,15 @@ class LoginVC: UIViewController {
     
     // login
     @IBAction func loginClicked(_ sender: UIButton) {
+        
+        // return if email empty
         guard let email = emailTxt.text, email.isNotEmpty else {
             //showToast(message: "email must be entered")
             self.simpleAlert(title: "Error", msg: "Plese fill out all fields")
             return
         }
         
+        // return if password empty
         guard let password = passwordTxt.text, password.isNotEmpty else {
             //showToast(message: "password must be entered")
             self.simpleAlert(title: "Error", msg: "Plese fill out all fields")
@@ -54,7 +57,10 @@ class LoginVC: UIViewController {
         // show loader indicator on screen
         activityIndicator.startAnimating()
         
+        //login with email and pass by by firebase
         Auth.auth().signIn(withEmail: email, password: password) { ( user, error ) in
+            
+            // return if have error
             if let error = error {
                 debugPrint(error.localizedDescription)
                 Auth.auth().handleFireAuthError(error: error, vc: self)
@@ -63,6 +69,10 @@ class LoginVC: UIViewController {
                 self.activityIndicator.stopAnimating()
                 return
             }
+            
+            UserService.getCurrentUser()
+            
+            // show loader indicator on screen
             self.activityIndicator.startAnimating()
             
             // dismiss all view cntrollers in main storyboard
@@ -73,7 +83,16 @@ class LoginVC: UIViewController {
     
     // continue with guest user
     @IBAction func guestClicked(_ sender: Any) {
-        
+        dismiss(animated: true, completion: nil)
+        //presendHomeController()
+    }
+    
+    // go to home page
+    fileprivate func presendHomeController() {
+        let storyboard = UIStoryboard(name: Storyboard.MainStoryboard, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: StoryBoardId.HomeVC)
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true, completion: nil)
     }
     
 }

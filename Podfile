@@ -32,5 +32,7 @@ target 'ecommerce-app' do
   # Pods for ecommerce-app
   shared_pods
   #pod 'Stripe', '15.0.1'
+  pod 'BraintreeDropIn'
+  pod 'Braintree'
 
 end

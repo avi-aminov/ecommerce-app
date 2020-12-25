@@ -5,6 +5,45 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.3):
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
+  - Braintree (4.36.1):
+    - Braintree/Card (= 4.36.1)
+    - Braintree/Core (= 4.36.1)
+    - Braintree/PayPal (= 4.36.1)
+    - Braintree/UI (= 4.36.1)
+  - Braintree/Card (4.36.1):
+    - Braintree/Core
+  - Braintree/Core (4.36.1)
+  - Braintree/PaymentFlow (4.36.1):
+    - Braintree/Card
+    - Braintree/Core
+    - Braintree/PayPalOneTouch
+  - Braintree/PayPal (4.36.1):
+    - Braintree/Core
+    - Braintree/PayPalOneTouch
+  - Braintree/PayPalDataCollector (4.36.1):
+    - Braintree/Core
+    - Braintree/PayPalUtils
+  - Braintree/PayPalOneTouch (4.36.1):
+    - Braintree/Core
+    - Braintree/PayPalDataCollector
+    - Braintree/PayPalUtils
+  - Braintree/PayPalUtils (4.36.1)
+  - Braintree/UI (4.36.1):
+    - Braintree/Card
+    - Braintree/Core
+  - Braintree/UnionPay (4.36.1):
+    - Braintree/Card
+    - Braintree/Core
+  - BraintreeDropIn (8.1.2):
+    - BraintreeDropIn/DropIn (= 8.1.2)
+  - BraintreeDropIn/DropIn (8.1.2):
+    - Braintree/Card (~> 4.32)
+    - Braintree/Core (~> 4.32)
+    - Braintree/PaymentFlow (~> 4.32)
+    - Braintree/PayPal (~> 4.32)
+    - Braintree/UnionPay (~> 4.32)
+    - BraintreeDropIn/UIKit
+  - BraintreeDropIn/UIKit (8.1.2)
   - Firebase/Auth (6.1.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.1.0)
@@ -122,6 +161,8 @@ PODS:
   - Protobuf (3.13.0)
 
 DEPENDENCIES:
+  - Braintree
+  - BraintreeDropIn
   - Firebase/Auth (= 6.1.0)
   - Firebase/Core (= 6.1.0)
   - Firebase/Firestore (= 6.1.0)
@@ -133,6 +174,8 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - BoringSSL-GRPC
+    - Braintree
+    - BraintreeDropIn
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -156,6 +199,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
+  Braintree: f7e0e9a5030e22b8ad77e617f27ac9327d7bc004
+  BraintreeDropIn: 50b79151c55f2ffbfbbf9157c2d07d8e85479588
   Firebase: 8d77bb33624ae9b62d745d82ec023de5f70f7e4f
   FirebaseAnalytics: 629301c2b9925f3537d4093a17a72751ae5b7084
   FirebaseAuth: 7fa2cc010b93770831a4e7a60651b52c3b8d111a
@@ -177,6 +222,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
 
-PODFILE CHECKSUM: 5cfde9333a788128a233de4a236113fee7d07242
+PODFILE CHECKSUM: d3f96dd221a3f53a2baf07edd17451f4e49492ef
 
 COCOAPODS: 1.9.3
