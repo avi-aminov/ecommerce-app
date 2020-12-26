@@ -222,7 +222,7 @@ extension HomeVC : UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = view.frame.width
-        let cellWidth = ( width - 70 ) / 2
+        let cellWidth = ( width - 90 ) / 2
         let cellHieght = cellWidth * 2
         
         return CGSize(width: cellWidth, height: cellHieght)

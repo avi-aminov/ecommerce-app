@@ -197,7 +197,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Mry-mz-P0t">
-                                <rect key="frame" x="20" y="88" width="374" height="808"/>
+                                <rect key="frame" x="30" y="88" width="354" height="808"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="en9-2E-VOL">
                                     <size key="itemSize" width="350" height="250"/>
@@ -216,12 +216,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="fD6-dc-i8B" secondAttribute="bottom" id="3qm-f0-uCq"/>
-                            <constraint firstItem="Mry-mz-P0t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3uT-xR-iUu"/>
+                            <constraint firstItem="Mry-mz-P0t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="3uT-xR-iUu"/>
                             <constraint firstItem="fD6-dc-i8B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CE7-VO-WdS"/>
                             <constraint firstItem="5Fl-4P-Tg2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HSg-0r-3tA"/>
                             <constraint firstItem="Mry-mz-P0t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IKs-uh-T9T"/>
                             <constraint firstAttribute="bottom" secondItem="Mry-mz-P0t" secondAttribute="bottom" id="T1U-kT-Wc2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mry-mz-P0t" secondAttribute="trailing" constant="20" id="cy2-8Q-RHM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mry-mz-P0t" secondAttribute="trailing" constant="30" id="cy2-8Q-RHM"/>
                             <constraint firstItem="fD6-dc-i8B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fNo-42-W9J"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fD6-dc-i8B" secondAttribute="trailing" id="l8h-1G-45M"/>
                             <constraint firstItem="5Fl-4P-Tg2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="phR-D9-0pj"/>
