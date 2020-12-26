@@ -49,7 +49,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J3i-P4-2uN">
-                                <rect key="frame" x="20" y="88" width="374" height="808"/>
+                                <rect key="frame" x="20" y="103" width="374" height="793"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kwJ-9I-TiH">
                                     <size key="itemSize" width="350" height="250"/>
@@ -63,18 +63,29 @@
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" red="0.83529411760000005" green="0.3921568627" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hlD-We-OiS" customClass="iCarousel">
+                                <rect key="frame" x="20" y="98" width="374" height="0.0"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="OXa-De-3yT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9rp-91-jtB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="NGJ-fa-Wbg" firstAttribute="centerX" secondItem="Z0K-pD-7Vp" secondAttribute="centerX" id="3mu-v0-ahB"/>
                             <constraint firstAttribute="bottom" secondItem="qz8-SD-cBy" secondAttribute="bottom" id="9Zs-bo-EC7"/>
+                            <constraint firstItem="9rp-91-jtB" firstAttribute="trailing" secondItem="hlD-We-OiS" secondAttribute="trailing" constant="20" id="EZR-BH-ZeL"/>
+                            <constraint firstItem="J3i-P4-2uN" firstAttribute="top" secondItem="hlD-We-OiS" secondAttribute="bottom" constant="10" id="GBB-Of-IBw"/>
                             <constraint firstItem="9rp-91-jtB" firstAttribute="trailing" secondItem="qz8-SD-cBy" secondAttribute="trailing" id="LdZ-IW-q20"/>
                             <constraint firstItem="9rp-91-jtB" firstAttribute="trailing" secondItem="J3i-P4-2uN" secondAttribute="trailing" constant="20" id="MDK-a9-cMK"/>
                             <constraint firstAttribute="bottom" secondItem="J3i-P4-2uN" secondAttribute="bottom" id="NUp-ZN-nuT"/>
+                            <constraint firstItem="hlD-We-OiS" firstAttribute="leading" secondItem="9rp-91-jtB" secondAttribute="leading" constant="20" id="U8J-z2-pSo"/>
                             <constraint firstItem="qz8-SD-cBy" firstAttribute="leading" secondItem="9rp-91-jtB" secondAttribute="leading" id="Wz9-tZ-Wlx"/>
                             <constraint firstItem="J3i-P4-2uN" firstAttribute="leading" secondItem="9rp-91-jtB" secondAttribute="leading" constant="20" id="gCa-nJ-bBm"/>
-                            <constraint firstItem="J3i-P4-2uN" firstAttribute="top" secondItem="9rp-91-jtB" secondAttribute="top" id="pMO-jv-XoY"/>
+                            <constraint firstItem="hlD-We-OiS" firstAttribute="top" secondItem="9rp-91-jtB" secondAttribute="top" constant="10" id="lFF-bL-ZOV"/>
+                            <constraint firstItem="J3i-P4-2uN" firstAttribute="top" secondItem="9rp-91-jtB" secondAttribute="top" constant="15" id="pMO-jv-XoY"/>
                             <constraint firstItem="NGJ-fa-Wbg" firstAttribute="centerY" secondItem="Z0K-pD-7Vp" secondAttribute="centerY" id="v0P-Aw-vx6"/>
                             <constraint firstItem="qz8-SD-cBy" firstAttribute="top" secondItem="9rp-91-jtB" secondAttribute="top" id="w9x-uT-iJw"/>
                         </constraints>
@@ -97,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbU-A9-quH" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="906" y="64"/>
+            <point key="canvasLocation" x="905.79710144927549" y="63.616071428571423"/>
         </scene>
         <!--Add Edit CaregoryVC-->
         <scene sceneID="dFa-QF-q4y">
@@ -335,7 +346,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IML-rX-tEi"/>
+        <segue reference="DcB-AR-YBw"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bg_cat3" width="1500" height="1875"/>

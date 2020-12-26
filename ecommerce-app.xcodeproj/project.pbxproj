@@ -14,6 +14,12 @@
 		740383272595099A0090FF7E /* purchaseDoneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74038325259509990090FF7E /* purchaseDoneVC.xib */; };
 		740383402595CB3D0090FF7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74306C24256BE09100CEB143 /* Assets.xcassets */; };
 		740383472595CC120090FF7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74306C24256BE09100CEB143 /* Assets.xcassets */; };
+		7403837D2597E3DC0090FF7E /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7403837B2597E3DC0090FF7E /* iCarousel.m */; };
+		7403837E2597E3DC0090FF7E /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7403837B2597E3DC0090FF7E /* iCarousel.m */; };
+		740383832597EF150090FF7E /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74505D8D2581EB49006750BD /* CheckoutVC.swift */; };
+		740383A32597F29C0090FF7E /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740383202594F75A0090FF7E /* Purchase.swift */; };
+		740383A62597F2D90090FF7E /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74505D9125828DB9006750BD /* CartItemCell.swift */; };
+		740383A92597F2EE0090FF7E /* purchaseDoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74038324259509990090FF7E /* purchaseDoneVC.swift */; };
 		74306C1C256BE09000CEB143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74306C1B256BE09000CEB143 /* AppDelegate.swift */; };
 		74306C1E256BE09000CEB143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74306C1D256BE09000CEB143 /* SceneDelegate.swift */; };
 		74306C20256BE09000CEB143 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74306C1F256BE09000CEB143 /* HomeVC.swift */; };
@@ -77,6 +83,10 @@
 		740383202594F75A0090FF7E /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		74038324259509990090FF7E /* purchaseDoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = purchaseDoneVC.swift; sourceTree = "<group>"; };
 		74038325259509990090FF7E /* purchaseDoneVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = purchaseDoneVC.xib; sourceTree = "<group>"; };
+		740383792597E3DB0090FF7E /* ecommerce-app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ecommerce-app-Bridging-Header.h"; sourceTree = "<group>"; };
+		7403837A2597E3DB0090FF7E /* ecommerce-admin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ecommerce-admin-Bridging-Header.h"; sourceTree = "<group>"; };
+		7403837B2597E3DC0090FF7E /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		7403837C2597E3DC0090FF7E /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		74306C18256BE09000CEB143 /* ecommerce-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ecommerce-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74306C1B256BE09000CEB143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74306C1D256BE09000CEB143 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +183,10 @@
 				74306C19256BE09000CEB143 /* Products */,
 				CE498B73592D300C7E01E96E /* Pods */,
 				A8964FF37BB5CF022DE7FDF7 /* Frameworks */,
+				7403837C2597E3DC0090FF7E /* iCarousel.h */,
+				7403837B2597E3DC0090FF7E /* iCarousel.m */,
+				740383792597E3DB0090FF7E /* ecommerce-app-Bridging-Header.h */,
+				7403837A2597E3DB0090FF7E /* ecommerce-admin-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -402,9 +416,11 @@
 				TargetAttributes = {
 					74306C17256BE09000CEB143 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					74306C33256BE0AB00CEB143 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -568,6 +584,7 @@
 				74505C9B2570D2E0006750BD /* Category.swift in Sources */,
 				74505CEB257407D0006750BD /* ProductCell.swift in Sources */,
 				74505D0F257C31CA006750BD /* ProductDetailVC.swift in Sources */,
+				7403837D2597E3DC0090FF7E /* iCarousel.m in Sources */,
 				74505CA32573067C006750BD /* CategoryCell.swift in Sources */,
 				74505CCB2573C80C006750BD /* Product.swift in Sources */,
 			);
@@ -582,14 +599,19 @@
 				74505D35257D213F006750BD /* RoundedViews.swift in Sources */,
 				74505DBF2589160A006750BD /* UserService.swift in Sources */,
 				74505C9C2570D2E0006750BD /* Category.swift in Sources */,
+				740383A32597F29C0090FF7E /* Purchase.swift in Sources */,
 				74306C37256BE0AB00CEB143 /* AppDelegate.swift in Sources */,
 				74505D15257D1E8F006750BD /* HomeVC.swift in Sources */,
 				74505D55257D2226006750BD /* ProductsVC.swift in Sources */,
+				740383A92597F2EE0090FF7E /* purchaseDoneVC.swift in Sources */,
 				74505DC52589162E006750BD /* Cart.swift in Sources */,
 				74505D7D257E98B6006750BD /* AdminProductsVC.swift in Sources */,
 				74505D81257EA69E006750BD /* AddEditProductVC.swift in Sources */,
 				74505C692570BEF6006750BD /* FirebaseAndUtils.swift in Sources */,
+				7403837E2597E3DC0090FF7E /* iCarousel.m in Sources */,
+				740383A62597F2D90090FF7E /* CartItemCell.swift in Sources */,
 				74505D76257DF47D006750BD /* AddEditCaregoryVC.swift in Sources */,
+				740383832597EF150090FF7E /* CheckoutVC.swift in Sources */,
 				74505D18257D20E0006750BD /* Constants.swift in Sources */,
 				74306C39256BE0AB00CEB143 /* SceneDelegate.swift in Sources */,
 				74505D38257D2148006750BD /* Extentions.swift in Sources */,
@@ -760,6 +782,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 523JTT8XH7;
@@ -772,6 +795,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aminovavi.ecommerce-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ecommerce-app-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -783,6 +808,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 523JTT8XH7;
@@ -795,6 +821,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aminovavi.ecommerce-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ecommerce-app-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -806,6 +833,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-admin";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 523JTT8XH7;
 				INFOPLIST_FILE = "ecommerce-admin/Info.plist";
@@ -816,6 +844,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aminovavi.ecommerce-admin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ecommerce-admin-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -827,6 +857,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-admin";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 523JTT8XH7;
 				INFOPLIST_FILE = "ecommerce-admin/Info.plist";
@@ -837,6 +868,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aminovavi.ecommerce-admin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ecommerce-admin-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
