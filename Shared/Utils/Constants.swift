@@ -8,10 +8,12 @@
 import Foundation
 import UIKit
 
+// global confin
 struct Config {
     static let Debugg = true
 }
 
+// PayPal authorization key
 struct Authorization{
     static let sandbox = "sandbox_q78y2n24_sqy9p4k266b7mgkf"
     static let live = ""
@@ -46,14 +48,14 @@ struct AppColors {
     static let OffWhite = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
 }
 
-
+// Identifires
 struct Identifires {
     static let CategoryCell = "CategoryCell"
     static let ProductCell = "ProductCell"
     static let CartItemCell = "CartItemCell"
 }
 
-
+// Segue TODO: need refactor name Sqgues to Segues
 struct Sqgues {
     static let ToProducts = "toProductsVC"
     static let ToAddEditCategory = "toAddEditCategory"

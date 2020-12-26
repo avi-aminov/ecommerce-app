@@ -7,6 +7,7 @@
 
 import Firebase
 
+// firebse auth handleFireAuthError
 extension Auth {
     func handleFireAuthError(error: Error, vc: UIViewController) {
         if let errorCode = AuthErrorCode(rawValue: error._code) {

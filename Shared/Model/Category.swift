@@ -8,6 +8,9 @@
 import Foundation
 import Firebase
 
+/**
+ Category struct work with firebase
+ */
 struct Category {
     var name: String
     var id: String

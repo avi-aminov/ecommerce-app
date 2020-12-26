@@ -8,7 +8,11 @@
 import Foundation
 import Firebase
 
-
+/**
+ Product struct work with firebase
+return data from modul
+ 
+ */
 struct Product {
     var name: String
     var productPrice: Double
