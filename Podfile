@@ -11,6 +11,7 @@ pod 'Firebase/Storage', '6.1.0'
 pod 'Firebase/Functions', '6.1.0'
 pod 'IQKeyboardManagerSwift', '6.3.0'
 pod 'Kingfisher', '~> 4.0'
+pod 'Braintree'
 
 end
 
@@ -32,7 +33,7 @@ target 'ecommerce-app' do
   # Pods for ecommerce-app
   shared_pods
   #pod 'Stripe', '15.0.1'
-  pod 'BraintreeDropIn'
-  pod 'Braintree'
+  #pod 'BraintreeDropIn'
+  
 
 end

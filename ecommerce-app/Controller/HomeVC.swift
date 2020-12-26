@@ -10,6 +10,7 @@ import Firebase
 
 class HomeVC: UIViewController {
 
+    @IBOutlet weak var iCarouserView: iCarousel!
     @IBOutlet weak var loginOutBtn: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -19,8 +20,17 @@ class HomeVC: UIViewController {
     let db = Firestore.firestore()
     var listner: ListenerRegistration!
 
+    let imgArr = [
+        UIImage(named: "s1"),
+        UIImage(named: "s2"),
+        UIImage(named: "s3"),
+        UIImage(named: "s4")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupICarouserView()
         setupCollectionView()
         setLoginBtnText()
         //setupInitialAnonymousUser()
@@ -45,6 +55,12 @@ class HomeVC: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: Identifires.CategoryCell, bundle: nil), forCellWithReuseIdentifier: Identifires.CategoryCell)
+    }
+    
+    func setupICarouserView(){
+        iCarouserView.type = .rotary
+        //iCarouserView.type = .invertedWheel
+        iCarouserView.contentMode = .scaleAspectFit
     }
     
     /*
@@ -244,5 +260,31 @@ extension HomeVC : UICollectionViewDelegate,
                 destination.showFavorites = true
             }
         }
+    }
+}
+
+
+extension HomeVC: iCarouselDelegate, iCarouselDataSource {
+    
+    func carousel(_ carousel: iCarousel, didSelectItemAt index: Int) {
+        print("carousel clicked \(index)")
+    }
+    
+    func numberOfItems(in carousel: iCarousel) -> Int {
+        imgArr.count
+    }
+    
+    func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
+        var imageView : UIImageView!
+        
+        if view == nil {
+            imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 170 ))
+            imageView.contentMode = .scaleAspectFit
+        }else {
+            imageView = view as? UIImageView
+        }
+        
+        imageView.image = imgArr[index]
+        return imageView
     }
 }

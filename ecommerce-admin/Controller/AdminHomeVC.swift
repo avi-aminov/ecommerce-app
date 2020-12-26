@@ -18,6 +18,10 @@ class AdminHomeVC: HomeVC {
         navigationItem.rightBarButtonItem = addCategoryBtn
     }
     
+    override  func setupICarouserView(){
+        
+    }
+    
     @objc func addCategory(){
         performSegue(withIdentifier: Sqgues.ToAddEditCategory, sender: self)
     }
