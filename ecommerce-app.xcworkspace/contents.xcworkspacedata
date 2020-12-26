@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ecommerce-app.xcodeproj">
+      location = "group:/Applications/_D/Swift/ecommerce-app/ecommerce-app.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

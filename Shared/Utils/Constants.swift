@@ -8,6 +8,14 @@
 import Foundation
 import UIKit
 
+struct Config {
+    static let Debugg = true
+}
+
+struct Authorization{
+    static let sandbox = "sandbox_q78y2n24_sqy9p4k266b7mgkf"
+    static let live = ""
+}
 
 // Storyboard constans
 struct Storyboard {

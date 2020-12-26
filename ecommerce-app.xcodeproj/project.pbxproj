@@ -12,18 +12,18 @@
 		740383212594F75A0090FF7E /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740383202594F75A0090FF7E /* Purchase.swift */; };
 		740383262595099A0090FF7E /* purchaseDoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74038324259509990090FF7E /* purchaseDoneVC.swift */; };
 		740383272595099A0090FF7E /* purchaseDoneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74038325259509990090FF7E /* purchaseDoneVC.xib */; };
+		740383402595CB3D0090FF7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74306C24256BE09100CEB143 /* Assets.xcassets */; };
+		740383472595CC120090FF7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74306C24256BE09100CEB143 /* Assets.xcassets */; };
 		74306C1C256BE09000CEB143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74306C1B256BE09000CEB143 /* AppDelegate.swift */; };
 		74306C1E256BE09000CEB143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74306C1D256BE09000CEB143 /* SceneDelegate.swift */; };
 		74306C20256BE09000CEB143 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74306C1F256BE09000CEB143 /* HomeVC.swift */; };
 		74306C23256BE09000CEB143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74306C21256BE09000CEB143 /* Main.storyboard */; };
-		74306C25256BE09100CEB143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74306C24256BE09100CEB143 /* Assets.xcassets */; };
 		74306C28256BE09100CEB143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74306C26256BE09100CEB143 /* LaunchScreen.storyboard */; };
 		74306C37256BE0AB00CEB143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74306C36256BE0AB00CEB143 /* AppDelegate.swift */; };
 		74306C39256BE0AB00CEB143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74306C38256BE0AB00CEB143 /* SceneDelegate.swift */; };
 		74306C3B256BE0AB00CEB143 /* AdminHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74306C3A256BE0AB00CEB143 /* AdminHomeVC.swift */; };
 		74306C3E256BE0AB00CEB143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74306C3C256BE0AB00CEB143 /* Main.storyboard */; };
 		74306C43256BE0AC00CEB143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74306C41256BE0AC00CEB143 /* LaunchScreen.storyboard */; };
-		74306C4B256BE0E300CEB143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74306C24256BE09100CEB143 /* Assets.xcassets */; };
 		74306C8B256BED3000CEB143 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74306C8A256BED3000CEB143 /* LoginStoryboard.storyboard */; };
 		74505C6125703B83006750BD /* forgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74505C5F25703B83006750BD /* forgotPasswordVC.swift */; };
 		74505C6225703B83006750BD /* forgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74505C6025703B83006750BD /* forgotPasswordVC.xib */; };
@@ -155,12 +155,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		74038350259605320090FF7E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				74306C3C256BE0AB00CEB143 /* Main.storyboard */,
+				74306C41256BE0AC00CEB143 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		74306C0F256BE09000CEB143 = {
 			isa = PBXGroup;
 			children = (
-				74306C4A256BE0DB00CEB143 /* Shared */,
-				74306C1A256BE09000CEB143 /* ecommerce-app */,
 				74306C35256BE0AB00CEB143 /* ecommerce-admin */,
+				74306C1A256BE09000CEB143 /* ecommerce-app */,
+				74306C4A256BE0DB00CEB143 /* Shared */,
 				74306C19256BE09000CEB143 /* Products */,
 				CE498B73592D300C7E01E96E /* Pods */,
 				A8964FF37BB5CF022DE7FDF7 /* Frameworks */,
@@ -185,8 +194,8 @@
 				74672D7E256C384500B6AE7D /* View */,
 				74672D7D256C383800B6AE7D /* Controller */,
 				74672D80256C387B00B6AE7D /* Storyboards */,
-				74672D05256C244B00B6AE7D /* GoogleService-Info.plist */,
 				74306C1D256BE09000CEB143 /* SceneDelegate.swift */,
+				74672D05256C244B00B6AE7D /* GoogleService-Info.plist */,
 				74306C29256BE09100CEB143 /* Info.plist */,
 			);
 			path = "ecommerce-app";
@@ -196,10 +205,9 @@
 			isa = PBXGroup;
 			children = (
 				74505D79257DF494006750BD /* Controller */,
-				74672D09256C256E00B6AE7D /* GoogleService-Info.plist */,
+				74038350259605320090FF7E /* Storyboards */,
 				74306C38256BE0AB00CEB143 /* SceneDelegate.swift */,
-				74306C3C256BE0AB00CEB143 /* Main.storyboard */,
-				74306C41256BE0AC00CEB143 /* LaunchScreen.storyboard */,
+				74672D09256C256E00B6AE7D /* GoogleService-Info.plist */,
 				74306C44256BE0AC00CEB143 /* Info.plist */,
 			);
 			path = "ecommerce-admin";
@@ -261,12 +269,12 @@
 		74672D7D256C383800B6AE7D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				74672D81256C390400B6AE7D /* LoginVC.swift */,
-				74672D85256C391900B6AE7D /* RegisterVC.swift */,
-				74306C1F256BE09000CEB143 /* HomeVC.swift */,
 				74306C1B256BE09000CEB143 /* AppDelegate.swift */,
+				74306C1F256BE09000CEB143 /* HomeVC.swift */,
 				74505CC62573C686006750BD /* ProductsVC.swift */,
 				74505D8D2581EB49006750BD /* CheckoutVC.swift */,
+				74672D81256C390400B6AE7D /* LoginVC.swift */,
+				74672D85256C391900B6AE7D /* RegisterVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -426,8 +434,8 @@
 			files = (
 				74306C28256BE09100CEB143 /* LaunchScreen.storyboard in Resources */,
 				74505CED257407D0006750BD /* ProductCell.xib in Resources */,
+				740383402595CB3D0090FF7E /* Assets.xcassets in Resources */,
 				74505CA52573067C006750BD /* CategoryCell.xib in Resources */,
-				74306C25256BE09100CEB143 /* Assets.xcassets in Resources */,
 				74672D06256C244B00B6AE7D /* GoogleService-Info.plist in Resources */,
 				74306C23256BE09000CEB143 /* Main.storyboard in Resources */,
 				74505D10257C31CB006750BD /* ProductDetailVC.xib in Resources */,
@@ -444,9 +452,9 @@
 			files = (
 				74505CA62573067C006750BD /* CategoryCell.xib in Resources */,
 				74306C43256BE0AC00CEB143 /* LaunchScreen.storyboard in Resources */,
-				74306C4B256BE0E300CEB143 /* Assets.xcassets in Resources */,
 				74505CEE257407D0006750BD /* ProductCell.xib in Resources */,
 				74306C3E256BE0AB00CEB143 /* Main.storyboard in Resources */,
+				740383472595CC120090FF7E /* Assets.xcassets in Resources */,
 				74672D0A256C256E00B6AE7D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -796,7 +804,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E7FC535A15EF6CC5D71AA5F9 /* Pods-ecommerce-admin.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-admin";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 523JTT8XH7;
@@ -817,7 +825,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A709E2E49C09329F85D7AA2 /* Pods-ecommerce-admin.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-admin";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 523JTT8XH7;

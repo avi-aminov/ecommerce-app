@@ -38,7 +38,7 @@ class ProductsVC: UIViewController , ProductCellDelegate{
         }
     }
     
-    /*
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Sqgues.ToCheckout {
             if let destination = segue.destination as? CheckoutVC {
@@ -46,7 +46,7 @@ class ProductsVC: UIViewController , ProductCellDelegate{
             }
         }
     }
-    */
+    
     
     func setupTableView(){
         tableView.backgroundColor = UIColor.clear

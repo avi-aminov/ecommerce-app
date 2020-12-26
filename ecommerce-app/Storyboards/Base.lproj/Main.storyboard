@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--CheckoutVC-->
+        <!--Check Out-->
         <scene sceneID="TO8-EY-c98">
             <objects>
                 <viewController id="dw4-ST-cfJ" customClass="CheckoutVC" customModule="ecommerce_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -170,7 +170,7 @@
                             <constraint firstItem="yL7-Re-FAN" firstAttribute="top" secondItem="BMG-ox-MpK" secondAttribute="bottom" constant="20" id="zFf-1W-Wqy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pKN-Oz-kuh"/>
+                    <navigationItem key="navigationItem" title="Check Out" id="pKN-Oz-kuh"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Mfq-CH-Jli" id="pcg-ts-wrd"/>
                         <outlet property="paymentMethodBtn" destination="8cR-IP-rzV" id="ICb-FW-jNF"/>
@@ -183,9 +183,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uGb-gy-VWU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2516" y="71"/>
+            <point key="canvasLocation" x="2543" y="40"/>
         </scene>
-        <!--e-Shop-->
+        <!--Wine Shop-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="ecommerce_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -227,7 +227,7 @@
                             <constraint firstItem="5Fl-4P-Tg2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="phR-D9-0pj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="e-Shop" id="hqF-Cf-l1y">
+                    <navigationItem key="navigationItem" title="Wine Shop" id="hqF-Cf-l1y">
                         <barButtonItem key="leftBarButtonItem" title="Login" id="B0v-xg-ma7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -257,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="936" y="71"/>
+            <point key="canvasLocation" x="972" y="71"/>
         </scene>
         <!--ProductsVC-->
         <scene sceneID="DnT-MS-gjV">
@@ -307,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2D-Sx-B2Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1749" y="583"/>
+            <point key="canvasLocation" x="1781" y="583"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vI0-4P-BdX">

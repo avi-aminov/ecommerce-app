@@ -27,16 +27,47 @@ class CheckoutVC: UIViewController , CartItemDelegate{
     
     var braintreeClient: BTAPIClient!
     
+    var selectedCategory : Category!
+    var category: Category!
     
-    //var category: Category!
+    var authorization:String!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        braintreeClient = BTAPIClient(authorization: "sandbox_q78y2n24_sqy9p4k266b7mgkf")!
+        authorization = Authorization.sandbox
+        
+        if !Config.Debugg {
+            authorization = Authorization.live
+        }
+        
+        braintreeClient = BTAPIClient(authorization: authorization)!
         
         setupTableView()
         setupPaymentInfo()
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Categories", style: .plain, target: self, action: #selector(backAction))
+
+    }
+    
+    @objc func backAction(){
+        print("Back Button Clicked")
+        
+        // TODO: go to products page by category
+        presendCategories()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("prepare")
+    }
+    
+    // go to Categories page
+    fileprivate func presendCategories() {
+        let storyboard = UIStoryboard(name: Storyboard.MainStoryboard, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: StoryBoardId.HomeVC)
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true, completion: nil)
     }
     
     func setupTableView(){
@@ -63,7 +94,6 @@ class CheckoutVC: UIViewController , CartItemDelegate{
     }
     
     @IBAction func placeOrderClicked(_ sender: Any) {
-        
         if let user = Auth.auth().currentUser, !user.isAnonymous {
 
             if Cart.cartItem.count > 0 {
@@ -75,7 +105,6 @@ class CheckoutVC: UIViewController , CartItemDelegate{
         }else{
             presendLoginController(isFoolScreen: false)
         }
-        
     }
     
     // print debug and
@@ -175,6 +204,8 @@ class CheckoutVC: UIViewController , CartItemDelegate{
         tableView.reloadData()
         setupPaymentInfo()
     }
+    
+    
 
 }
 
