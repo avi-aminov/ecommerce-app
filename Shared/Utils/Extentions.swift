@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 import Firebase
 
+// Firestore extension for querys
+// categories and products Query
 extension Firestore {
     var categories: Query {
         return collection("categories").order(by: "timeStemp", descending: true)
@@ -19,6 +21,7 @@ extension Firestore {
     }
 }
 
+// convetr pennies to formatted currency
 extension Int {
     func penniesToFormattedCurrency() -> String {
         let dollars = Double(self) / 100

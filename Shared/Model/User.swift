@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ User struct work with firebase
+ */
 struct User {
     var id: String
     var email: String
