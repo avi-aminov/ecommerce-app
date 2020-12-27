@@ -174,6 +174,15 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		740383EA2598540F0090FF7E /* library */ = {
+			isa = PBXGroup;
+			children = (
+				7403837C2597E3DC0090FF7E /* iCarousel.h */,
+				7403837B2597E3DC0090FF7E /* iCarousel.m */,
+			);
+			path = library;
+			sourceTree = "<group>";
+		};
 		74306C0F256BE09000CEB143 = {
 			isa = PBXGroup;
 			children = (
@@ -183,8 +192,7 @@
 				74306C19256BE09000CEB143 /* Products */,
 				CE498B73592D300C7E01E96E /* Pods */,
 				A8964FF37BB5CF022DE7FDF7 /* Frameworks */,
-				7403837C2597E3DC0090FF7E /* iCarousel.h */,
-				7403837B2597E3DC0090FF7E /* iCarousel.m */,
+				740383EA2598540F0090FF7E /* library */,
 				740383792597E3DB0090FF7E /* ecommerce-app-Bridging-Header.h */,
 				7403837A2597E3DB0090FF7E /* ecommerce-admin-Bridging-Header.h */,
 			);
