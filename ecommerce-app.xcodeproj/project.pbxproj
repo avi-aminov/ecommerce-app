@@ -20,6 +20,8 @@
 		740383A32597F29C0090FF7E /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740383202594F75A0090FF7E /* Purchase.swift */; };
 		740383A62597F2D90090FF7E /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74505D9125828DB9006750BD /* CartItemCell.swift */; };
 		740383A92597F2EE0090FF7E /* purchaseDoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74038324259509990090FF7E /* purchaseDoneVC.swift */; };
+		740383F32598592F0090FF7E /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740383F22598592F0090FF7E /* Carousel.swift */; };
+		740383F42598592F0090FF7E /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740383F22598592F0090FF7E /* Carousel.swift */; };
 		74306C1C256BE09000CEB143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74306C1B256BE09000CEB143 /* AppDelegate.swift */; };
 		74306C1E256BE09000CEB143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74306C1D256BE09000CEB143 /* SceneDelegate.swift */; };
 		74306C20256BE09000CEB143 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74306C1F256BE09000CEB143 /* HomeVC.swift */; };
@@ -87,6 +89,7 @@
 		7403837A2597E3DB0090FF7E /* ecommerce-admin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ecommerce-admin-Bridging-Header.h"; sourceTree = "<group>"; };
 		7403837B2597E3DC0090FF7E /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		7403837C2597E3DC0090FF7E /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		740383F22598592F0090FF7E /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		74306C18256BE09000CEB143 /* ecommerce-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ecommerce-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74306C1B256BE09000CEB143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74306C1D256BE09000CEB143 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				740383202594F75A0090FF7E /* Purchase.swift */,
+				740383F22598592F0090FF7E /* Carousel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -594,6 +598,7 @@
 				74505D0F257C31CA006750BD /* ProductDetailVC.swift in Sources */,
 				7403837D2597E3DC0090FF7E /* iCarousel.m in Sources */,
 				74505CA32573067C006750BD /* CategoryCell.swift in Sources */,
+				740383F32598592F0090FF7E /* Carousel.swift in Sources */,
 				74505CCB2573C80C006750BD /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -617,6 +622,7 @@
 				74505D81257EA69E006750BD /* AddEditProductVC.swift in Sources */,
 				74505C692570BEF6006750BD /* FirebaseAndUtils.swift in Sources */,
 				7403837E2597E3DC0090FF7E /* iCarousel.m in Sources */,
+				740383F42598592F0090FF7E /* Carousel.swift in Sources */,
 				740383A62597F2D90090FF7E /* CartItemCell.swift in Sources */,
 				74505D76257DF47D006750BD /* AddEditCaregoryVC.swift in Sources */,
 				740383832597EF150090FF7E /* CheckoutVC.swift in Sources */,

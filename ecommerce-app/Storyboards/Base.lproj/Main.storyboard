@@ -267,7 +267,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="5Fl-4P-Tg2" id="WSy-Qz-Mcg"/>
                         <outlet property="collectionView" destination="Mry-mz-P0t" id="mUS-hJ-mOx"/>
-                        <outlet property="iCarouserView" destination="Ffq-uE-0Pn" id="iwT-7P-dDx"/>
+                        <outlet property="iCarouselView" destination="Ffq-uE-0Pn" id="iwT-7P-dDx"/>
                         <outlet property="loginOutBtn" destination="B0v-xg-ma7" id="X7z-ur-Uoo"/>
                         <segue destination="Ohg-8C-9Uq" kind="show" identifier="toProductsVC" id="d3C-NX-wy5"/>
                         <segue destination="Ohg-8C-9Uq" kind="show" identifier="toFavorites" id="tHu-Y6-CVg"/>

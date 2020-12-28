@@ -10,21 +10,21 @@ import Firebase
 
 class HomeVC: UIViewController {
 
-    @IBOutlet weak var iCarouserView: iCarousel!
+    @IBOutlet weak var iCarouselView: iCarousel!
     @IBOutlet weak var loginOutBtn: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+
     var categories = [Category]()
     var selectedCategory : Category!
     let db = Firestore.firestore()
     var listner: ListenerRegistration!
-
-    let imgArr = [
+    
+    let iCarouselImagesArr = [
         UIImage(named: "s1"),
         UIImage(named: "s2"),
         UIImage(named: "s3"),
-        UIImage(named: "s4")
+        UIImage(named: "s4"),
     ]
     
     override func viewDidLoad() {
@@ -44,6 +44,7 @@ class HomeVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        setCarouselListener()
         setCatogoryListener()
         setLoginBtnText()
     }
@@ -58,25 +59,11 @@ class HomeVC: UIViewController {
     }
     
     func setupICarouserView(){
-        iCarouserView.type = .rotary
-        //iCarouserView.type = .invertedWheel
-        iCarouserView.contentMode = .scaleAspectFit
+        iCarouselView.type = .rotary
+        iCarouselView.contentMode = .scaleAspectFit
+        iCarouselView.isPagingEnabled = true
+        iCarouselView.autoscroll = 0.2
     }
-    
-    /*
-    func setupInitialAnonymousUser(){
-        if Auth.auth().currentUser == nil {
-            Auth.auth().signInAnonymously { (result, error) in
-                if let error = error {
-                    Auth.auth().handleFireAuthError(error: error, vc: self)
-                    debugPrint(error)
-                }
-            }
-        }else {
-            UserService.getCurrentUser()
-        }
-    }
-    */
     
     func setupNavigationBar(){
         guard let font = UIFont(name: "futura", size: 26) else {
@@ -101,10 +88,8 @@ class HomeVC: UIViewController {
     }
     
     func setCatogoryListener(){
-        //.whereField("isActive", isEqualTo: true)
-        
         listner = db.categories.addSnapshotListener { (snapshot, error) in
-             
+            
             if let error = error {
                 debugPrint(error.localizedDescription)
                 return
@@ -165,27 +150,6 @@ class HomeVC: UIViewController {
         }else {
             self.presendLoginController(isFoolScreen: true)
         }
-        
-        /*
-        if user.isAnonymous {
-            presendLoginController(isFoolScreen: true)
-        }else {
-            do {
-                try Auth.auth().signOut()
-                UserService.logoutUser()
-                Auth.auth().signInAnonymously { (result, error)  in
-                    if let error = error {
-                        debugPrint(error)
-                        Auth.auth().handleFireAuthError(error: error, vc: self)
-                    }
-                    self.presendLoginController(isFoolScreen: true)
-                }
-            } catch {
-                debugPrint(error)
-                Auth.auth().handleFireAuthError(error: error, vc: self)
-            }
-        }
-        */
     }
 }
 
@@ -271,7 +235,7 @@ extension HomeVC: iCarouselDelegate, iCarouselDataSource {
     }
     
     func numberOfItems(in carousel: iCarousel) -> Int {
-        imgArr.count
+        iCarouselImagesArr.count
     }
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
@@ -284,7 +248,9 @@ extension HomeVC: iCarouselDelegate, iCarouselDataSource {
             imageView = view as? UIImageView
         }
         
-        imageView.image = imgArr[index]
+        print(carousel)
+        
+        imageView.image = iCarouselImagesArr[index]
         return imageView
     }
 }
