@@ -19,6 +19,10 @@ extension Firestore {
     func products(category: String) -> Query {
         return collection("products").whereField("category", isEqualTo: category).order(by: "timeStemp", descending: true)
     }
+    
+    var carousel: Query {
+        return collection("carousel")
+    }
 }
 
 // convetr pennies to formatted currency
@@ -78,4 +82,3 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
-

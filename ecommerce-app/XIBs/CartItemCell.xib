@@ -22,22 +22,16 @@
                         <rect key="frame" x="8" y="8" width="304" height="64"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVH-N1-ufh">
-                                <rect key="frame" x="280" y="4" width="20" height="20"/>
+                                <rect key="frame" x="274" y="22" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="jbW-C1-5h3"/>
-                                    <constraint firstAttribute="height" constant="20" id="str-Tq-Khc"/>
+                                    <constraint firstAttribute="height" constant="20" id="2Zd-Hh-4AE"/>
+                                    <constraint firstAttribute="width" constant="20" id="P0z-Vz-qec"/>
                                 </constraints>
                                 <state key="normal" image="red_trash"/>
                                 <connections>
                                     <action selector="removeItemcClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HDQ-3D-M6b"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product title 99.99$" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24V-3O-tky">
-                                <rect key="frame" x="72" y="37.5" width="228" height="22.5"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aerial_2" translatesAutoresizingMaskIntoConstraints="NO" id="cv0-Tb-IIo" customClass="RoundedImageView" customModule="ecommerce_app" customModuleProvider="target">
                                 <rect key="frame" x="4" y="4" width="56" height="56"/>
                                 <constraints>
@@ -45,18 +39,24 @@
                                     <constraint firstAttribute="height" constant="56" id="Ft9-p9-ZNV"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product title 99.99$" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24V-3O-tky">
+                                <rect key="frame" x="70" y="21" width="194" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cv0-Tb-IIo" firstAttribute="centerY" secondItem="YLP-hR-KOk" secondAttribute="centerY" id="2vx-1d-tp4"/>
-                            <constraint firstItem="24V-3O-tky" firstAttribute="leading" secondItem="cv0-Tb-IIo" secondAttribute="trailing" constant="12" id="ALj-pu-LDg"/>
-                            <constraint firstAttribute="bottom" secondItem="24V-3O-tky" secondAttribute="bottom" constant="4" id="ECx-51-A34"/>
+                            <constraint firstItem="24V-3O-tky" firstAttribute="centerY" secondItem="YLP-hR-KOk" secondAttribute="centerY" id="CPi-oA-54n"/>
+                            <constraint firstItem="24V-3O-tky" firstAttribute="leading" secondItem="cv0-Tb-IIo" secondAttribute="trailing" constant="10" id="OPH-AA-9OL"/>
                             <constraint firstItem="cv0-Tb-IIo" firstAttribute="leading" secondItem="YLP-hR-KOk" secondAttribute="leading" constant="4" id="UqP-Km-NSI"/>
+                            <constraint firstItem="mVH-N1-ufh" firstAttribute="leading" secondItem="24V-3O-tky" secondAttribute="trailing" constant="10" id="ZIT-Kb-OTg"/>
                             <constraint firstAttribute="bottom" secondItem="cv0-Tb-IIo" secondAttribute="bottom" constant="4" id="ZhH-po-N8Z"/>
                             <constraint firstItem="cv0-Tb-IIo" firstAttribute="top" secondItem="YLP-hR-KOk" secondAttribute="top" constant="4" id="d5e-s1-f8T"/>
-                            <constraint firstAttribute="trailing" secondItem="mVH-N1-ufh" secondAttribute="trailing" constant="4" id="jtg-8f-253"/>
-                            <constraint firstItem="mVH-N1-ufh" firstAttribute="top" secondItem="YLP-hR-KOk" secondAttribute="top" constant="4" id="nY6-EP-Cha"/>
-                            <constraint firstAttribute="trailing" secondItem="24V-3O-tky" secondAttribute="trailing" constant="4" id="wpe-9W-tur"/>
+                            <constraint firstItem="mVH-N1-ufh" firstAttribute="centerY" secondItem="YLP-hR-KOk" secondAttribute="centerY" id="mDZ-uG-R7n"/>
+                            <constraint firstAttribute="trailing" secondItem="mVH-N1-ufh" secondAttribute="trailing" constant="10" id="tuF-hd-I4S"/>
                         </constraints>
                     </view>
                 </subviews>
