@@ -44,7 +44,6 @@ class HomeVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        setCarouselListener()
         setCatogoryListener()
         setLoginBtnText()
     }
@@ -59,10 +58,10 @@ class HomeVC: UIViewController {
     }
     
     func setupICarouserView(){
-        iCarouselView.type = .rotary
+        iCarouselView.type = .cylinder
         iCarouselView.contentMode = .scaleAspectFit
         iCarouselView.isPagingEnabled = true
-        iCarouselView.autoscroll = 0.2
+        //iCarouselView.autoscroll = 0.2
     }
     
     func setupNavigationBar(){

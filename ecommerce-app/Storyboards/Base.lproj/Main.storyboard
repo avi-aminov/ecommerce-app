@@ -199,6 +199,9 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Mry-mz-P0t">
                                 <rect key="frame" x="30" y="288" width="354" height="608"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="608" id="B5s-oc-km1"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="en9-2E-VOL">
                                     <size key="itemSize" width="350" height="250"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -212,12 +215,8 @@
                                 <color key="color" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ffq-uE-0Pn" customClass="iCarousel">
-                                <rect key="frame" x="20" y="98" width="374" height="170"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="S3o-fG-l55"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="170" id="n8k-K8-eOo"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Bxa-0r-pUX"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="L4Y-2j-DJ5"/>
@@ -227,21 +226,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Mry-mz-P0t" firstAttribute="top" secondItem="Ffq-uE-0Pn" secondAttribute="bottom" constant="20" id="0A1-ia-zdt"/>
                             <constraint firstAttribute="bottom" secondItem="fD6-dc-i8B" secondAttribute="bottom" id="3qm-f0-uCq"/>
                             <constraint firstItem="Mry-mz-P0t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="3uT-xR-iUu"/>
                             <constraint firstItem="fD6-dc-i8B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CE7-VO-WdS"/>
-                            <constraint firstItem="Ffq-uE-0Pn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="E1r-F0-AgT"/>
-                            <constraint firstItem="Ffq-uE-0Pn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="HMW-eh-2r8"/>
+                            <constraint firstItem="Ffq-uE-0Pn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DVg-IH-ztu"/>
                             <constraint firstItem="5Fl-4P-Tg2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HSg-0r-3tA"/>
-                            <constraint firstItem="Mry-mz-P0t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="IKs-uh-T9T"/>
+                            <constraint firstItem="Ffq-uE-0Pn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KRB-WO-k31"/>
                             <constraint firstAttribute="bottom" secondItem="Mry-mz-P0t" secondAttribute="bottom" id="T1U-kT-Wc2"/>
-                            <constraint firstItem="Ffq-uE-0Pn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ZLp-B2-rsq"/>
+                            <constraint firstItem="Mry-mz-P0t" firstAttribute="top" secondItem="Ffq-uE-0Pn" secondAttribute="bottom" id="XcO-RH-lDE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mry-mz-P0t" secondAttribute="trailing" constant="30" id="cy2-8Q-RHM"/>
                             <constraint firstItem="fD6-dc-i8B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fNo-42-W9J"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fD6-dc-i8B" secondAttribute="trailing" id="l8h-1G-45M"/>
+                            <constraint firstItem="Ffq-uE-0Pn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pLw-3F-N6r"/>
                             <constraint firstItem="5Fl-4P-Tg2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="phR-D9-0pj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ffq-uE-0Pn" secondAttribute="trailing" constant="20" id="t9d-Xa-sUt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Wine Shop" id="hqF-Cf-l1y">
