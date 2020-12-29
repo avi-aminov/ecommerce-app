@@ -91,3 +91,7 @@ iOSInjectionProject/
 
 #Pods files
 Pods/
+
+#GoogleService-Info for firebase 
+ecommerce-app/GoogleService-Info.plist
+ecommerce-admin/GoogleService-Info.plist
