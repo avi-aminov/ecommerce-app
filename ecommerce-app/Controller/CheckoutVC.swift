@@ -36,14 +36,7 @@ class CheckoutVC: UIViewController , CartItemDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        authorization = Authorization.sandbox
-        
-        if !Config.Debugg {
-            authorization = Authorization.live
-        }
-        
-        braintreeClient = BTAPIClient(authorization: authorization)!
-        
+        braintreeClientSetUp()
         setupTableView()
         setupPaymentInfo()
         
@@ -60,6 +53,15 @@ class CheckoutVC: UIViewController , CartItemDelegate{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("prepare")
+    }
+    
+    func braintreeClientSetUp(){
+        authorization = Authorization.sandbox
+        
+        if !Config.Debugg {
+            authorization = Authorization.live
+        }
+        braintreeClient = BTAPIClient(authorization: authorization)!
     }
     
     // go to Categories page
@@ -129,26 +131,6 @@ class CheckoutVC: UIViewController , CartItemDelegate{
             if let tokenizedPayPalAccount = tokenizedPayPalAccount {
                 print("----------- Got a nonce: \(tokenizedPayPalAccount.nonce)")
                 
-                /*
-                // Access additional information
-                let email = tokenizedPayPalAccount.email
-                let firstName = tokenizedPayPalAccount.firstName
-                let lastName = tokenizedPayPalAccount.lastName
-                let phone = tokenizedPayPalAccount.phone
-
-                // See BTPostalAddress.h for details
-                let billingAddress = tokenizedPayPalAccount.billingAddress
-                let shippingAddress = tokenizedPayPalAccount.shippingAddress
-                
-                
-                print("email \(email)")
-                print("firstName \(firstName)")
-                print("lastName \(lastName)")
-                print("phone \(phone)")
-                print("billingAddress \(billingAddress)")
-                print("shippingAddress \(shippingAddress)")
-                */
-                
                 var purchase = Purchase.init(
                     id: "",
                     tokenizedPayPalAccount: tokenizedPayPalAccount.nonce,
@@ -162,7 +144,6 @@ class CheckoutVC: UIViewController , CartItemDelegate{
                 
                 docRef = Firestore.firestore().collection("purchases").document()
                 purchase.id = docRef.documentID
-
             
                 let data = Purchase.modelToData(purchase: purchase)
                 docRef.setData(data, merge: true) { (error) in
@@ -170,7 +151,6 @@ class CheckoutVC: UIViewController , CartItemDelegate{
                         self.handelError(error: error, msg: "Unable to upload new purchases to Firestore")
                         return
                     }
-                    
                     self.purchaseDone()
                 }
                 

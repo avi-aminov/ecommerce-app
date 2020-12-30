@@ -14,3 +14,14 @@ This is a basic e-commerce app, including an additional targen for the Admin app
 
 <img src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/admin.jpg" alt="Screens" style="max-width:100%;">
 
+<h1>Getting started</h1>
+
+<p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system. </p>
+
+<h3>You will need</h3>
+<ul> 
+    <li>CocoaPods</li>
+    <li>firebase 2 Project one for client App and one for Admin App</li>
+    <li>PayPal acount</li>
+    <li>braintree payments for Pay with PayPal</li>
+</ul>
