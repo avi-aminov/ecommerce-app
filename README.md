@@ -46,24 +46,15 @@ git clone https://github.com/avi-aminov/ecommerce-app.git
 </p>
 
 
-<img 
-    src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/firebase.png" 
-    alt="Screens" 
-    style="width:300px;">
+<img src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/firebase.png" alt="Screens"  style="width:300px;">
 
 <p>
    in Authentication enable Email/Password<br>
     and open option Cloud Firestore
 </p>
-<img 
-    src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/auth.png" 
-    alt="Screens" 
-    style="width:300px;">
+<img src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/auth.png"  alt="Screens" style="width:300px;">
     
-<img 
-    src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/db.png" 
-    alt="Screens" 
-    style="width:300px;">
+<img src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/db.png" alt="Screens" style="width:300px;">
     
 <br>
     
@@ -79,5 +70,14 @@ git clone https://github.com/avi-aminov/ecommerce-app.git
 </pre>
 
 
+<h3>PayPal and Braintree</h3>
+<p>
+  in PayPal business acount create demo user (senbox user), and  linked to a Braintree user in Braintree dashboard
+</p>
+
+<p>
+  replace yuor authorization sandbox key
+</p>
+<img src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/senbox.png"  alt="Screens" style="max-width:100%;">
 
 
