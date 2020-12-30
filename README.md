@@ -45,9 +45,27 @@ git clone https://github.com/avi-aminov/ecommerce-app.git
     add GoogleService-Info.plist to project 
 </p>
 
-<img src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/firebase.png" alt="Screens" style="max-width:300px;!important">
+<img 
+    src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/firebase.png" 
+    alt="Screens" 
+    style="width:300px;">
 
-
+<p>
+   in Authentication enable Email/Password<br>
+    and open option Cloud Firestore
+</p>
+<img 
+    src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/auth.png" 
+    alt="Screens" 
+    style="width:300px;">
+    
+    <img 
+    src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/db.png" 
+    alt="Screens" 
+    style="width:300px;">
+    
+    <br>
+    
 <h3>CocoaPods</h3>
 <p>
   in project folder open terminal and run
