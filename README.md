@@ -25,3 +25,24 @@ This is a basic e-commerce app, including an additional targen for the Admin app
     <li>PayPal acount</li>
     <li>braintree payments for Pay with PayPal</li>
 </ul>
+
+<h3>Installing</h3>
+
+Download the project folder or clone the repo.
+
+<pre>
+<code>
+git clone https://github.com/avi-aminov/ecommerce-app.git
+</code>
+</pre>
+
+<h3>firebase</h3>
+<p>
+    Create your Project in firebase, <br>
+    and register two Apps <br>
+    for client App: com.aminovavi.ecommerce-app <br>
+    for Admin App: com.aminovavi.ecommerce-admin <br><br>
+    add GoogleService-Info.plist to project 
+</p>
+
+<img src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/firebase.png" alt="Screens" style="max-width:100%;">
