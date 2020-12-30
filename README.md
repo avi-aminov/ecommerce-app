@@ -45,7 +45,7 @@ git clone https://github.com/avi-aminov/ecommerce-app.git
     add GoogleService-Info.plist to project 
 </p>
 
-<img src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/firebase.png" alt="Screens" style="max-width:33px;">
+<img src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/firebase.png" alt="Screens" style="max-width:300px;">
 
 
 <h3>CocoaPods</h3>
