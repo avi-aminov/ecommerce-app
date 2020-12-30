@@ -40,9 +40,25 @@ git clone https://github.com/avi-aminov/ecommerce-app.git
 <p>
     Create your Project in firebase, <br>
     and register two Apps <br>
-    for client App: com.aminovavi.ecommerce-app <br>
-    for Admin App: com.aminovavi.ecommerce-admin <br><br>
+    for client App: <b>com.aminovavi.ecommerce-app</b> <br>
+    for Admin App: <b>com.aminovavi.ecommerce-admin</b> <br><br>
     add GoogleService-Info.plist to project 
 </p>
 
-<img src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/firebase.png" alt="Screens" style="max-width:100%;">
+<img src="https://raw.githubusercontent.com/avi-aminov/ecommerce-app/main/images_helper/firebase.png" alt="Screens" style="max-width:33px;">
+
+
+<h3>CocoaPods</h3>
+<p>
+  in project folder open terminal and run
+</p>
+
+<pre>
+<code>
+    pod install
+</code>
+</pre>
+
+
+
+
